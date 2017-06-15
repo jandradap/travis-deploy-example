@@ -17,11 +17,12 @@ SHA=`git rev-parse --verify HEAD`
 
 # Config git
 git config --global user.name "Travis CI"
-git config --global user.email "bot@rock-the-open-source.com"
+git config --global user.email "bot@travis-deploy-example.com"
 git config --global push.default simple
 
 # Get the deploy key by using Travis's stored variables to decrypt deploy_key.enc
-openssl aes-256-cbc -K $encrypted_7b3bd922f0aa_key -iv $encrypted_7b3bd922f0aa_iv -in deploy.enc -out deploy -d
+#openssl aes-256-cbc -K $encrypted_7b3bd922f0aa_key -iv $encrypted_7b3bd922f0aa_iv -in deploy.enc -out deploy -d
+openssl aes-256-cbc -K $encrypted_51372c547d55_key -iv $encrypted_51372c547d55_iv -in deploy-key.enc -out deploy-key -d
 chmod 600 deploy
 eval `ssh-agent -s`
 ssh-add deploy

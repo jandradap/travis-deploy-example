@@ -14,6 +14,6 @@ jobs:
       script:
         - ./deploy.sh
     - script:
-        - surge --project ./build --domain rock-the-open-source.surge.sh
+        - surge --project ./build --domain travis-deploy-example.surge.sh
     - script:
         - ./now_deploy.sh

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # name
-APP_NAME="rock-the-open-source"
+APP_NAME="travis-deploy-example"
 
 # Remove old site
 now -t "$NOW_TOKEN" rm -y $APP_NAME
