@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+  - "7"
+cache: yarn
+install:
+  - yarn install
+  - yarn global add surge now
+
+jobs:
+  include:
+    - stage: test
+      script: yarn test
+    - stage: publish
+      script:
+        - ./deploy.sh
+    - script:
+        - surge --project ./build --domain travis-deploy-example.surge.sh
+    - script:
+        - ./now_deploy.sh
