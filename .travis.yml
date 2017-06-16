@@ -12,6 +12,7 @@ jobs:
       script: yarn test
     - stage: publish
       script:
+        - ls -lh
         - ./deploy.sh
     - script:
         - surge --project ./build --domain travis-deploy-example.surge.sh
